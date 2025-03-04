@@ -1,0 +1,84 @@
+#hit {
+    background-image: url(./imgs/Hit3.png);
+    background-size: cover;
+}
+
+#kick {
+    background-image: url(./imgs/Kick.png);
+    background-size: cover;
+}
+
+#slash {
+    background-image: url(./imgs/Slash5.png);
+    background-size: cover;
+}
+
+#stab {
+    background-image: url(./imgs/Stab3.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#bash {
+    background-image: url(./imgs/Bash3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#shoot {
+    background-image: url(./imgs/Throw2.jpg);
+    background-size: cover;
+}
+
+#grab {
+    background-image: url(./imgs/Grab1.png);
+    background-size: cover;
+}
+
+#touch {
+    background-image: url(./imgs/Touch.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#shove {
+    background-image: url(./imgs/Shove.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#block {
+    background-image: url(./imgs/Block3.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#dodge {
+    background-image: url(./imgs/Dodge8.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#counter {
+    background-image: url(./imgs/Counter3.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#parry {
+    background-image: url(./imgs/Parry6.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#footwork {
+    background-image: url(./imgs/Footwork.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#uncannydodge {
+    background-image: url(./imgs/UncannyDodge.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

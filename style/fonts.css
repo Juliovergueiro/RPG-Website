@@ -1,0 +1,36 @@
+@import url('fonts.css');
+
+@font-face {
+    font-family: 'Playwrite';
+    src: url('fonts/PlaywriteAUSA-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/RubikVinyl-Regular.ttf')
+}
+
+@font-face {
+    font-family: 'Harmonia';
+    src: url('fonts/Harmonia\ Sans\ W01\ Regular.ttf')
+}
+
+@font-face {
+    font-family: 'Kareudon';
+    src: url('fonts/Kareudon\ Font.ttf')
+}
+
+@font-face {
+    font-family: 'SDCyberpunk';
+    src: url('fonts/Cyber\ Alert.otf')
+}
+
+@font-face {
+    font-family: 'Rovelink';
+    src: url('fonts/Rovelink.otf')
+}
+
+@font-face {
+    font-family: 'Tanjiro';
+    src: url('fonts/TANJIRO.otf')
+}

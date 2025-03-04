@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>An RPG</title>
+    <link rel="stylesheet" href="style/bootstrap.css">
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="overlay hidden"></div>
+        <div class="custom-modal hidden">
+            <div id="modal-positioning">
+                <div id="borderplayer1"></div>
+                <div id="imgplayer1"></div>
+                <div id="borderplayer2"></div>
+                <div id="imgplayer2"></div>
+            </div>
+            <div class="row" id="names-positioning">
+                <div class="bg-namep1">
+                    <div id="namep1">Gojo Kazuki</div>
+                </div>
+                <div class="bg-namep2">
+                    <div id="namep2">Yukimura Kenzo</div>
+                </div>
+            </div>
+            <div class="actions-positioning">
+                <div class="action-hold">
+                    <div class="skill-chosen">Reversal Technique: Red</div>
+                </div>
+                <div class="action-roll hidden">04</div>
+                <div class="reaction-roll hidden">11</div>
+                <div class="reaction-hold">
+                    <div class="skill-chosen">Love Cannon</div>
+                </div>
+            </div>
+            <div class="skillInfo-container">
+                <div class="vertical-container attacker-bonus">
+                    <div id="atk" class="combat-modifier">Attack: Placeholder</div>
+                    <div id="dmg" class="combat-modifier">Damage: Placeholder</div>
+                    <div class="combat-modifier">Breakthr: 1d10 + 1d8</div>
+                    <div class="combat-modifier">Type:</div>
+                    <div class="combat-effects">Effects:</div>
+                    <div id="atk" class="combat-modifier">Attack: Placeholder</div>
+                    <div id="dmg" class="combat-modifier">Damage: Placeholder</div>
+                    <div class="combat-modifier">Breakthr: 1d10 + 1d8</div>
+                    <div class="combat-modifier">Type:</div>
+                    <div class="combat-effects">Conditions: </div>
+                </div>
+                <div class="vertical-container roll-results">
+                    <div class="horizontal-container hidden">
+                        <div class="action-result">00</div>
+                        <div class="reaction-result">00</div>
+                    </div>
+                    <div class="damage-done hidden">Light Hit! 53 Damage</div>
+                </div>
+
+                <div class="vertical-container defensor-bonus">
+                    <div class="combat-modifier">Defense: 00</div>
+                    <div class="combat-modifier">Reduction: 00</div>
+                    <div class="combat-modifier">Hardening: 00</div>
+                    <div class="combat-modifier">Type: </div>
+                    <div class="combat-effects">Effects:</div>
+                    <div class="combat-modifier">Defense: 00</div>
+                    <div class="combat-modifier">D Reduction: 00</div>
+                    <div class="combat-modifier">Hardng: 00</div>
+                    <div class="combat-modifier">Type:</div>
+                    <div class="combat-effects">Conditions:</div>
+                </div>
+            </div>
+
+
+
+                <div id="reaction-choice">
+                        <div id="block" class="reaction"></div>
+                        <div id="dodge" class="reaction"></div>
+                        <div id="counter" class="reaction"></div>
+                        <div id="parry" class="reaction"></div>
+                        <div id="uncannydodge" class="reaction"></div>
+                        <div id="footwork" class="reaction"></div>
+                </div>
+            <div class="horizontal-container act-time">
+            </div>
+        </div>
+    <div class="container-fluid menu">
+        <ul class="list-inline d-flex menu">
+            <li class="list-inline-item" id="home">Home</li>
+            <li class="list-inline-item" id="meupersonagem">Personagem</li>
+            <li class="list-inline-item"><a href="index.html" id="mesa">Mesa</a></li>
+            <li class="list-inline-item"><a href="sistema.html" target="_blank" id="sistema">Sistema</a></li>
+        </ul>
+    </div>
+    <div class="container-fluid" id="top-divisoria"></div>
+    <div class="row" id="sessao">
+        <div class="container-fluid flex-fill col-2" id="left-container">
+            <div id="players-container" class="row">
+                <div class="player-spot col"></div>
+            </div>
+        </div>
+        <div class="container col-10" id="middle-container">
+            <div class="map">
+            </div>
+            <div class="d-flex">
+                <div class="choice-container d-flex">
+                    <button class="skill-choice">Action</button>
+                    <button class="skill-choice">End Turn</button>
+                    <button class="skill-choice">Enhancement</button>
+                    <button class="skill-choice">Aim</button>
+                    <button class="skill-choice">Maneuver</button>
+                    <button class="skill-choice">Movement</button>
+                    <button class="skill-choice">Chat</button>
+                    <button class="skill-choice">Change Character</button>
+                    <button class="skill-choice">Log</button>
+                    <button class="skill-choice">Dungeon Master</button>
+                </div>
+                <div class="action-container">
+                    <div class="action attack hidden"></div>
+                    <div class="action hidden"></div>
+                    <div class="action hidden"></div>
+                    <div class="action hidden"></div>
+                    <div class="action hidden"></div>
+                    <div class="action hidden"></div>
+                    <div class="action hidden"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/bundle.js"></script>
+
+</body>
+
+</html>

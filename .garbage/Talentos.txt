@@ -1,0 +1,39 @@
+? [Perk]
+
+Hp +2 por ponto de Vigor
+
+?? [Perk]
+
+Hp +3 por ponto de Vigor
+
+Glass Cannon [Perk]
+
+-res, +fa
+
+Bloodthirst [Perk]
+
+Recupere 2% de HP sempre que causar dano (1x por ação)
+
+Fury [Perk]
+
+dano minimo = spirit, se causar dano acima do seu valor de spirit adicione +1d4
+
+battlemage = dps de castar uma spell ganha um bonus na prox açao de close combat
+
+Perk "Trickster"
+
+Tantos Tricks por Rodada (o padrao é 1)
+
+last resort
+
+se uma skill for lançada qnd vc tem menos de 5% de hp ou mp, bonus d dano
+
+Gambler [Perk]
+
+wit +1 se tiver mais intuition que o oponente, acertos críticos são elevados em +1 se tiver mais intuition que o oponente ou igual
+
+Streetfighting
+
+wit +1 com açoes de artes marciais
+
+Untouchable perk, se esquivar de um atk recebe +es ate o fim do turno do adv, se encerra se tomar um atk e nao pode ser reativado no turno

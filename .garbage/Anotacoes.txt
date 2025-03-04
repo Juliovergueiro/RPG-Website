@@ -1,0 +1,38 @@
+npm uninstall (package)
+
+  "scripts": {
+    "start": "node src/index.js",
+  }
+
+Pode executar npm start agora
+
+
+npm i express
+npm i expose
+
+
+
+
+
+  Atualizar repositório do github
+
+git status
+git add .
+git commit -m "Your commit message"
+git push origin main
+
+
+
+    Media Queries
+
+ Order of Execution
+CSS is applied in the order it appears in the file.
+If both media queries target the same property, the one that appears later in the CSS file will override the previous one.
+
+    Webpack
+
+npm install webpack
+
+npm install --save-dev webpack-cli
+
+npx webpack // Executa o webpack

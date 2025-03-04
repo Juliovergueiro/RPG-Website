@@ -1,0 +1,19 @@
+{ "playerData": [
+    {
+        "name": "Gojo Kazuki",
+        "level": "17",
+        "max_hp": "100",
+        "hp": "70",
+        "max_mp": "50",
+        "mp": "30"
+    },
+    {
+        "name": "Ryuji",
+        "level": "17",
+        "max_hp": "150",
+        "hp": "40",
+        "max_mp": "30",
+        "mp": "20"
+    }
+]
+}

@@ -1,0 +1,18 @@
+const choiceBtn = document.getElementById('choice-btn')
+const choiceBar = document.querySelector('.choice-bar')
+const choiceSkill = document.querySelectorAll('.skill-choice')
+const skill = document.querySelectorAll('.action')
+const playerBar = document.querySelectorAll('.player-bar')
+const attackSkills = document.querySelectorAll('.attack')
+const reactSkills = document.querySelectorAll('.reaction')
+const specialSkills = document.querySelectorAll('.attack')
+const supportSkills = document.querySelectorAll('.attack')
+const enhancementSkills = document.querySelectorAll('.attack')
+const movementSkills = document.querySelectorAll('.attack')
+const tacticalSkills = document.querySelectorAll('.attack')
+const maneuverSkills = document.querySelectorAll('.attack')
+const actingBtn = document.getElementById('acting')
+const playerSpot = document.querySelectorAll('.player-spot')
+const actionContainer = document.querySelectorAll('.action-container')
+
+module.exports = { choiceBtn, choiceBar, choiceSkill, skill, playerBar, attackSkills, reactSkills, specialSkills, supportSkills, enhancementSkills, movementSkills, tacticalSkills, maneuverSkills, actingBtn, playerSpot }

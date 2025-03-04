@@ -1,0 +1,13 @@
+npm i express bcrypt
+
+ npm i -g nodemon
+
+Nodemon é uma API que reinicia seu servidor automaticamente quando detecta mudanças no file
+
+-g é pra instalar globalmente
+
+Rode usando nodemon yourfile.JS ao invés de node yourFile.js
+
+"scripts": {
+  "devStart": "nodemon server.js",
+}

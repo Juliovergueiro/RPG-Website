@@ -1,0 +1,790 @@
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal-container, .skillInfo-container, .player-spot {
+    display: flex;
+}
+
+.player-spot {
+padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.menu {
+    background-color: whitesmoke;
+    margin-bottom: 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#home,
+#meupersonagem,
+#mesa,
+#sistema {
+    text-align: center;
+    line-height: 5vh;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 260px;
+    height: 60px;
+}
+
+#home:hover,
+#meupersonagem:hover,
+#mesa:hover,
+#sistema:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+a, a:visited {
+    display: block;
+    text-decoration: none;
+}
+
+#top-divisoria {
+    background: linear-gradient(to top, white, whitesmoke);
+    width: 100%;
+    height: 30px;
+}
+
+#sessao {
+width: 99%;
+}
+
+#left-container {
+width: 550px;
+height: 300px;
+overflow-y: scroll;
+margin: 0;
+}
+
+.player-avatar {
+margin-top: 1px;
+width: 110px;
+height: 100px;
+background-color: rgb(0, 0, 0);
+}
+
+.avatarp1 {
+background-image: url(./imgs/Throw2.jpg);
+background-repeat: no-repeat;
+background-size: 100% 100%;
+width: 100%;
+height: 100%;
+}
+
+.player-bar {
+margin-top: 1px;
+width: 160px;
+height: 100px;
+background-color: whitesmoke;
+display: flex;
+flex-direction: column;
+margin-left: 0px !important;
+}
+
+#players-container {
+display: flex;
+flex-wrap: wrap;
+}
+
+#middle-container {
+width: 940px;
+height: 850px;
+background-color: rgb(0, 0, 0);
+margin-left: 40px;
+margin-right: 200px;
+display: flex;
+flex-direction: column;
+}
+
+.map {
+display: grid;
+grid-template-columns: repeat(12, 75.5px);
+grid-template-rows: repeat(10, 56.5px);
+gap: 1px;
+width: 930px;
+height: 595px;
+background-color: rgb(0, 0, 0);
+overflow-x: scroll;
+}
+
+.tile {
+    width: 75.5px;
+    height: 56.5px;
+    background-color: whitesmoke;
+    border: 1px solid rgb(0, 0, 0)
+}
+
+.choice-container {
+background-color: rgb(0, 0, 0);
+width: 300px;
+height: 200px;
+display: flex;
+flex-wrap: wrap;
+line-height: 45px;
+text-align: center;
+}
+
+.skill-choice {
+color: white;
+background-color: rgb(0, 0, 0);
+border: 1px solid rgb(255, 255, 255);
+width: 150px;
+height: 50px;
+font-size: 15px;
+}
+
+.action-container {
+width: 590px;
+height: 240px;
+background-color: rgb(0, 0, 0);
+border: 1px solid whitesmoke;
+margin-top: 5px;
+margin-left: 20px;
+
+display: grid;
+
+grid-template-columns: repeat(6, 95px);
+grid-template-rows: repeat(1, 80px);
+overflow-y: scroll;
+}
+
+.action {
+width: 95px;
+height: 80px;
+background-color: wheat;
+}
+
+.player-info {
+margin-left: 10px;
+font-size: 17px;
+}
+
+.hp-spot {
+display: flex;
+}
+
+.hp-info {
+width: 25px;
+margin-left: 5px;
+font-size: 14px;
+}
+
+.hp-container {
+    position: relative;
+    background-color: black;
+    margin-top: 5px;
+    margin-left: 6px;
+    width: 180px;
+    height: 14px;
+    border: 3px solid black;
+}
+
+.hp-bar {
+    position: relative;
+    background-color: white;
+    width: 174px;
+    height: 100%;
+    transition: all;
+    transition-duration: 1s;
+    z-index: 2;
+}
+
+.hp-grey {
+    position: absolute;
+    background-color: rgb(170, 161, 161);
+    width: 174px;
+    height: 100%;
+    top: 0px;
+}
+
+.mp-spot {
+display: flex;
+}
+
+.mp-info {
+width: 25px;
+margin-left: 5px;
+font-size: 14px;
+}
+
+.mp-container {
+    position: relative;
+    background-color: black;
+    margin-top: 4px;
+    margin-left: 6px;
+    width: 180px;
+    height: 14px;
+    border: 3px solid black;
+}
+
+.mp-bar {
+    position: relative;
+    background-color: rgb(87, 160, 194);
+    width: 174px;
+    height: 100%;
+    transition: all;
+    transition-duration: 1s;
+    z-index: 2;
+}
+
+.mp-grey {
+    position: absolute;
+    background-color: rgb(170, 161, 161);
+    width: 174px;
+    height: 100%;
+    top: 0px;
+}
+
+.ap-spot {
+display: flex;
+}
+
+.ap-info {
+width: 25px;
+margin-left: 10px;
+font-size: 14px;
+}
+
+.ap-container {
+    position: relative;
+    background-color: black;
+    margin-left: 1px;
+    margin-top: 3px;
+    width: 90px;
+    height: 14px;
+    border: 3px solid black;
+}
+
+.ap-bar {
+    position: relative;
+    background-color: rgb(99, 211, 133);
+    width: 84px;
+    height: 100%;
+    transition: all;
+    transition-duration: 1s;
+    z-index: 2;
+}
+
+.ap-grey {
+    position: absolute;
+    background-color: rgb(170, 161, 161);
+    width: 84px;
+    height: 100%;
+    top: 0px;
+}
+
+.overlay {
+    position: fixed;
+    /* Stays in place as the user scrolls */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    /* Black background with 50% opacity */
+    z-index: 1000;
+    /* Lower than modal's z-index */
+    transition-duration: 2s;
+}
+
+.custom-modal {
+    position: fixed;
+    /* Fixed positioning relative to the viewport */
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center the container */
+    z-index: 1001;
+    /* Higher than the overlay */
+    /* Additional styling for your images or modal content */
+    /* Optional: a background for the modal */
+    padding: 20px;
+    border-radius: 8px;
+    width: 75%;
+    height: 60%;
+    background: rgb(0,0,0,0.0);
+/*    background: radial-gradient(circle,
+    rgb(24, 24, 51) 15%,
+    rgba(0, 0, 0, 1) 100%
+    ); */
+}
+
+#acting, #reacting {
+width: 100px;
+height: 20px;
+position: fixed;
+top: 55%;
+}
+
+#modal-positioning {
+width: 100%;
+height: 320px;
+position: relative;
+}
+
+#imgplayer1 {
+background-image: url('./imgs/Honored.jpg');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+position: absolute;
+width: 385px;
+height: 295px;
+left: 4%;
+bottom: 25px;
+z-index: 1;
+}
+
+#imgplayer2 {
+background-image: url('./imgs/Yuta2.jpg');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+position: absolute;
+width: 390px;
+height: 295px;
+left: 61%;
+bottom: 25px;
+z-index: 1;
+}
+
+#borderplayer1 {
+background-image: url('./imgs/frame15.png');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+position: absolute;
+width: 420px;
+height: 320px;
+left: 2%;
+bottom: 10px;
+z-index: 2;
+opacity: 1;
+}
+
+#borderplayer2 {
+background-image: url('./imgs/frame15.png');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+position: absolute;
+width: 420px;
+height: 320px;
+left: 59.5%;
+bottom: 10px;
+z-index: 2;
+opacity: 1;
+}
+
+#act-time {
+width: 100%;
+height: 400px;
+color: white;
+}
+
+.attacker-bonus {
+margin-left: 4vw;
+width: 30%;
+height: 340px;
+display: flex;
+flex-wrap: wrap;
+align-content: flex-start;
+}
+
+.attacker-action {
+width: 220px;
+height: 210px;
+margin-top: 1%;
+margin-left: 3%;
+}
+
+.combat-modifier {
+color: white;
+margin-top: 1%;
+font-size: 15px;
+width: 220px;
+height: 50px;
+border: 1px dotted white;
+font-family: 'Tanjiro';
+text-indent: 10px;
+line-height: 50px;
+}
+
+.combat-effects {
+color: white;
+margin-top: 1%;
+font-size: 15px;
+width: 220px;
+height: 100px;
+border: 1px dotted white;
+font-family: 'Tanjiro';
+text-indent: 10px;
+line-height: 35px;
+}
+
+.actions-positioning {
+display: flex;
+margin-top: 20px;
+}
+
+.action-hold {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+width: 25vw;
+height: 8vh;
+background-image: url('./imgs/frame14.png');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+margin-left: 4%;
+}
+
+.reaction-hold {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+width: 25vw;
+height: 8vh;
+background-image: url('./imgs/frame14.png');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+margin-left: 20.5%;
+}
+
+.roll-results {
+width: 290px;
+height: 400px;
+}
+
+.skill-chosen {
+font-family: 'SDCyberpunk';
+font-size: 1vw;
+color: rgb(228, 79, 79);
+
+text-align: center;
+white-space: normal;
+margin-top: 16px;
+margin-left: 20px;
+margin-right: 20px;
+}
+
+.defensor-bonus {
+margin-left: 3vw;
+width: 30%;
+width: 30%;
+height: 340px;
+display: flex;
+flex-wrap: wrap;
+}
+
+.head-bonus {
+font-size: 18px;
+color: white;
+}
+
+.normal-bonus {
+font-size: 14px;
+color: white;
+}
+
+.reaction {
+    width: 33.1%;
+    height: 33.2%;
+    box-sizing: border-box;
+    border: 1px solid ghostwhite;
+    cursor: pointer;
+}
+
+#modal-positioning {
+width: 100%;
+height: 420px;
+display: flex;
+flex-wrap: wrap;
+}
+
+#names-positioning {
+width: 100%;
+height: 60px;
+}
+
+#acting, #reacting {
+width: 100px;
+height: 20px;
+position: fixed;
+top: 55%;
+}
+
+#imgplayer1 {
+background-image: url('./imgs/Honored.jpg');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+position: absolute;
+width: 22vw;
+height: 40vh;
+left: 6%;
+z-index: 1;
+}
+
+#imgplayer2 {
+background-image: url('./imgs/Yuta2.jpg');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+position: absolute;
+width: 22vw;
+height: 40vh;
+left: 61.5%;
+z-index: 1;
+}
+
+#borderplayer1 {
+background-image: url('./imgs/frame15.png');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+position: absolute;
+width: 24vw;
+height: 43vh;
+left: 4.5%;
+z-index: 2;
+opacity: 1;
+}
+
+#borderplayer2 {
+background-image: url('./imgs/frame15.png');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+position: absolute;
+width: 24vw;
+height: 43vh;
+left: 60%;
+z-index: 2;
+opacity: 1;
+}
+
+.bg-namep1 {
+background-color: rgb(0, 0, 0, 0);
+border: black solid 1px;
+border-radius: 5%;
+width: 12vw;
+height: 5vh;
+margin-left: 10vw;
+}
+
+.bg-namep2 {
+background-color: rgb(0, 0, 0, 0);
+border: black solid 1px;
+border-radius: 5%;
+width: 12vw;
+height: 5vh;
+margin-left: 28vw;
+}
+
+#namep1 {
+color: rgb(255, 255, 255);
+font-size: 2vw;
+font-family: 'Kareudon';
+text-align: center;
+}
+
+#namep2 {
+color: rgb(255, 255, 255);
+font-size: 2vw;
+font-family: 'Kareudon';
+text-align: center;
+}
+
+#act-time {
+width: 100%;
+height: 400px;
+color: white;
+}
+
+.attacker-action {
+width: 220px;
+height: 210px;
+margin-top: 1%;
+margin-left: 3%;
+}
+
+.combat-modifier {
+color: white;
+margin-top: 1%;
+font-size: 15px;
+width: 220px;
+height: 50px;
+border: 1px dotted white;
+font-family: 'Tanjiro';
+text-indent: 10px;
+line-height: 50px;
+}
+
+.combat-effects {
+color: white;
+margin-top: 1%;
+font-size: 15px;
+width: 220px;
+height: 100px;
+border: 1px dotted white;
+font-family: 'Tanjiro';
+text-indent: 10px;
+line-height: 35px;
+}
+
+.action-roll {
+position: absolute;
+color: white;
+width: 3%;
+height: 20px;
+left: 35%;
+top: 10%;
+font-size: 78px;
+font-family: 'SDCyberpunk';
+color: red;
+}
+
+.reaction-roll {
+position: absolute;
+color: white;
+width: 3%;
+height: 20px;
+left: 49%;
+top: 30%;
+font-size: 78px;
+font-family: 'SDCyberpunk';
+color: blue;
+}
+
+.action-result {
+position: absolute;
+color: white;
+width: 3%;
+height: 20px;
+left: 40%;
+top: 72%;
+font-size: 48px;
+font-family: 'SDCyberpunk';
+color: red;
+}
+
+.reaction-result {
+position: absolute;
+color: white;
+width: 3%;
+height: 20px;
+left: 46%;
+top: 72%;
+font-size: 48px;
+font-family: 'SDCyberpunk';
+color: blue;
+}
+
+.damage-done {
+color: white;
+width: 200px;
+height: 20px;
+margin-top: 80px;
+margin-left: 80px;
+font-size: 15px;
+font-family: 'SDCyberpunk';
+color: rgb(76, 141, 202);
+}
+
+.defensor-reaction {
+width: 220px;
+height: 210px;
+margin-top: 1%;
+margin-left: 10%;
+}
+
+.head-bonus {
+font-size: 18px;
+color: white;
+}
+
+.normal-bonus {
+font-size: 14px;
+color: white;
+}
+
+.chosen-action {
+background-image: url('./imgs/GojoBlue1.jpeg');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+font-size: 15px;
+width: 150px;
+height: 150px;
+margin-top: 20px;
+margin-left: 120px;
+border: 1px solid red;
+}
+
+.chosen-reaction {
+background-image: url('./imgs/GojoBlue1.jpeg');
+background-repeat: no-repeat;
+background-size: 100% 100%;
+font-size: 15px;
+width: 210px;
+height: 320px;
+/*border: 2px dashed whitesmoke;*/
+}
+
+#reaction-choice {
+position: absolute;
+display: flex;
+flex-wrap: wrap;
+align-content: flex-start;
+overflow-y: scroll;
+width: 17vw;
+height: 45vh;
+left: 37.5%;
+top: 12%;
+z-index: 2000;
+border: 2px solid whitesmoke;
+}
+
+.reaction {
+    width: 33.1%;
+    height: 33.2%;
+    box-sizing: border-box;
+    border: 1px solid ghostwhite;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1080px) {
+
+.skill-choice {
+line-height: 15px;
+font-size: 10px;
+width: 75px;
+height: 25px;
+}
+
+.p2-container {
+margin-top: 0px;
+}
+
+.hp-container {
+width: 100px;
+}
+
+.hp-bar, .hp-grey {
+width: 94px;
+}
+
+.mp-container {
+width: 100px;
+}
+
+.mp-bar, .mp-grey {
+width: 94px;
+}
+
+.player-info {
+font-size: 13px;
+}
+
+}

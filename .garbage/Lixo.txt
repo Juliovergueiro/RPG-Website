@@ -1,0 +1,733 @@
+tem formas de vc correr e tal p poder se mover mais, dai é dado
+
+confronto de movimentacao ini x ini
+
+"arranque" (dash) ao inves de recuo
+
+os 2 chars só percorrem dps q o novo gap de distancia é causado, ou seja, se a tec alcançar o alvo então ngm percorre nd (se não alcançar os 2 vão percorrer; se ainda tiver no alcance da tec, precisa se mover dnv)
+Satoru Goja — 04/09/2024 09:56
+Qm reage a uma mov phase do personagem usa seu proprio turno e fica "em queue" pra atkr o char em movimento antes da mov phase comecar, talvez mudar o nome de reacaodemov pra outra coisa por isso
+
+OU
+açoes de mov só se concluem na movement phase, mas elas podem ser feitas normalmente.
+
+qnd algm faz uma açao de mov, ela entra "em movimento" (tem como skippar isso e concluir a mov antes msm da phase), já joga dados (até p saber se vai precisar msm) e os outros q forem entrando em turno e quiserem interagir com um personagem "em movimento" podem usar reaçoes de movimento. eles já jogam os dados nesse turno msm, e se eles também entrarem "em movimento" com uma reaçao de mov ou escolha deles msm, eles tb só concluem na movement phase
+
+TLDR: certas açoes de mov vao te deixar num estado chamado "em movimento" pois é algo q consome tempo e cria abertura. esse estado pd não rolar pq vc se moveu mt rápido anime-like, mas se rolar, ele só vai se concluir na movement phase que é algo que acontece no inicio de td rodada. se uma meia-ação te deixar "em movimento" vc ainda pd agir, só que vc n tá mais na distancia inicial (criar regra pra isso) e vai agir enqnt ta em movimento (duh) deve ter debuff dependendo
+
+dessa forma a mov phase é só algo q é concluido antes das novas rodadas mas é "passivo", não é uma fase a mais pra ter decisoes, isso torna td melhor e mais rápido
+
+vanish = tds possiveis rodam p ver se podem reagir. se algm conseguir, dai o vanish só conclui na mov phase e esse em especifico pode reagir qnd chegar no turno dele
+
+tem açoes como "voar p longe soltando blast", é uma açao q tem movimentaçao e ataque
+
+se ele tiver dado vanish em qm ta perto dele ou ter sucedido reagindo a um atk, ele esquiva do atk suave e da pessoa suave, ele so n conseguiu confirmar q chegou no lugar pq um mano tem chance de interceptar ele
+
+99% de chances que passa
+
+alem disso, açoes de mov como "movimento curto" vão ser meia ação e não procam o mov phase, movimentaçoes full são ações completas msm e usam o sistema de mov phase
+
+		Traits
+
+explicaçao
+
+Born Leader []: a
+
+Brave []: a
+
+Calm []: a
+
+Charismatic []: a
+
+Cold Blood []: a
+
+Dilligent []: a
+
+Entrepeuner []:
+
+Friendly []: a
+
+Loyal []: a
+
+Lucky []: a
+
+Negotiator []: a
+
+Silver Tongue []: a
+
+Wealthy / Rich []: a
+
+Wise []: a
+
+		Flaws
+
+explicaçao
+
+Addiction []: a
+
+Arrogant []:
+
+Compulsive Liar []:
+
+Cynical []: a
+
+Immature []: a
+
+Needy []: a
+
+Pessimistic []: a
+
+Prideful []
+
+Hot Blood []:
+
+Shy []: a
+
+Sick (Depression) []:
+
+o char q é mais rápido q o outro faz as maneuvers custarem -0.1 (arredondado pra de 0.5 em 0.5), sendo q o max é poder ser reduzido pra 50% do valor original (se custava 2 maneuvers so vai pdr custar 1)
+
+faz custar menos AP tb talvez? ou só faz custar menos AP?
+
+se um char tiver mais ap q todos os outros ele ganha mais maneuvers baseado no tanto q tem, isso é p fzr ele consumir o ap dele e se igualar aos outros
+OU
+todos q tiverem mais ap que aquele que tiver menos ap no jogo
+
+"resposta de movimentação", não reação pois é feita diferente
+
+passo = é um movimento curto / rapido, ele força a mov phase instantaneamente pois o char nao chega a realmente entrar em um estado de "em movimento", ele é basicamente um passo de uma zona ou tipo um hiraishin q o cara percorreu tanto quanto um passo
+
+os passos sempre jogam speed, se vencerem o outro char nem conseguem reagir ao passo
+
+movimento = fica em queue p jogar na mov phase em um estado chamado "moving".
+
+qqr um que interagir com um char em movimento vai entrar em queue pra "mov phase", ele nao joga no turno mesmo
+
+movement response = todos q quiserem interagir com um char em movimentacao vão estar fazendo uma "movement response" e só jogam na mov phase tb.
+
+essa interação tb te poe no estado "moving", e quem interagir com vc também vai pra mov phase. existe sim um mundo onde o primeiro se move e todos só jogam na mov phase e isso é ok pq a mov phase é tipo uma rodada "extra" no fim de toda rodada
+
+sistema de target = acho q ja fez, mas precisa ter target pra poder reagir a movimentaçoes
+
+uma açao de movimento por turno. certas açoes tipo flanco tem chance de dar refresh nessa açao de movimento, mas o motivo disso é especialmente pq n tá sendo usado pra fugir ou se mover por aí, a distancia é mantida
+
+superhuman ?balance, agility? = nao fazer som andando
+
+troca dupla = os 2 tomam
+
+?troca dupla avançada? = ataca com a defesa já adiantada, é diferente de um counter pois o counter só ataca o oponente no meio do golpe dele
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Bar Example</title>
+    <style>
+        /* Health Bar Container */
+        .health-bar {
+            width: 300px; /* Width of the entire health bar */
+            height: 30px; /* Height of the health bar */
+            background-color: grey; /* Background for the health bar (empty part) */
+            border: 2px solid black; /* Optional: Border for the health bar */
+            border-radius: 5px; /* Rounded edges */
+            position: relative;
+        }
+
+        /* Health (the filled portion) */
+        .health {
+            height: 100%;
+            background-color: green; /* Color of the filled health portion */
+            width: 100%; /* Default: 100% health */
+            border-radius: 5px 0 0 5px; /* Rounded edges only on the left side */
+        }
+
+        /* Optional: Text inside the health bar */
+        .health-text {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            color: white;
+            line-height: 30px; /* Align text vertically */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Health Bar -->
+    <div class="health-bar">
+        <div class="health" id="health-bar"></div>
+        <div class="health-text" id="health-text">100%</div>
+    </div>
+
+    <br>
+
+    <!-- Buttons to simulate damage or healing -->
+    <button onclick="updateHealth(-20)">Take 20 Damage</button>
+    <button onclick="updateHealth(10)">Heal 10 HP</button>
+
+    <script>
+        let health = 100; // Default health value
+
+        function updateHealth(amount) {
+            // Update the health value by adding or subtracting 'amount'
+            health += amount;
+
+            // Ensure health stays between 0 and 100
+            if (health > 100) health = 100;
+            if (health < 0) health = 0;
+
+            // Update the health bar width based on the new health value
+            const healthBar = document.getElementById('health-bar');
+            healthBar.style.width = health + '%';
+
+            // Change color based on health value (optional)
+            if (health > 50) {
+                healthBar.style.backgroundColor = 'green';
+            } else if (health > 20) {
+                healthBar.style.backgroundColor = 'yellow';
+            } else {
+                healthBar.style.backgroundColor = 'red';
+            }
+
+            // Update the health text inside the bar
+            const healthText = document.getElementById('health-text');
+            healthText.innerText = health + '%';
+        }
+    </script>
+
+</body>
+</html>
+
+Ability [Ab]:
+
+Conviction [Con]:
+
+        <p> <span class="modifier-18px"><b>Weapon Class:</b></span><span class="modifier-small"> (WC) Costuma ser lida nos modelos. Indica o tipo de dano que a arma causa.</span></p>
+        <p> <span class="modifier-small"> Algumas Common e Advanced Skills são dadas para todas as armas que forem de tal classe. É possível que uma arma tenha mais de uma classe.</span></p>
+    <hr>
+
+normal damage = todo o dano no hp, normal
+
+não ignora res e le o resist
+
+crushing damage = metade do dano no AP, metade no HP
+
+não ignora res e le o resist
+
+posture damage = dano no AP
+
+ignora res, mas os ferimentos q dão são afetados pela sua res
+
+organ damage = dano no sp
+
+ignora res, mas os ferimentos q dão são afetados pela sua res
+
+mana? Damage = dano na mana
+
+ignora res e geralmente é bem raro, tipo troço de sugar chakra, e normalmente a res não def não (só uma resistencia mais rara)
+
+mental damage = dano no hp
+
+ignora res e os ferimentos q dão são afetados pela sua convicção, não res
+
+armored damage = metade do dano vai p durability do item e metade pro hp
+
+        <p><span class="modifier-18px"><b>Athletics:</b></span> <span class="modifier-small"> Engloba Strength e Agility.</span></p>
+        <p><i><span class="modifier-small">Acrobatics: Dance pelo campo de batalha.</span></i></p>
+        <p><i><span class="modifier-small">Conditioning: Prepare-se fisicamente.</span></i></p>
+        <p><i><span class="modifier-small">Footwork: Domine formas diferentes de evasão.</span></i></p>
+    <img src="css/imgs/Img3.jpg" id="img3">
+        <p><span class="modifier-18px"><b>Battle Arts:</b></span> <span class="modifier-small"> Engloba Dexterity e Reflexes.</span></p>
+        <p><i><span class="modifier-small">Hand to Hand: Domine seus inimigos desarmado.</span></i></p>
+        <p><i><span class="modifier-small">Shooting: Domine seus inimigos na longa distância.</span></i></p>
+        <p><i><span class="modifier-small">Weapons: Domine diversos truques com armas.</span></i></p>
+        <p><span class="modifier-18px"><b>Cunning:</b></span> <span class="modifier-small"> Engloba Acuity e Instinct.</span></p>
+        <p><i><span class="modifier-small">Expertise: Domine suas habilidades únicas.</span></i></p>
+        <p><i><span class="modifier-small">Stealth: Mova-se em puro silêncio.</span></i></p>
+        <p><i><span class="modifier-small">Tactics: Calcule todos seus passos para a vitória.</span></i></p>
+        <p><span class="modifier-18px"><b>Will:</b></span> <span class="modifier-small"> Engloba Spirit e Vigor.</span></p>
+        <p><i><span class="modifier-small">Coldness: Frieza, não se deixe vencer por emoções ou palavras.</span></i></p>
+        <p><i><span class="modifier-small">Overconfidence: Sobreconfiança e arrogância, domine seus oponentes e triunfe sobre os mais fracos.</span></i></p>
+        <p><i><span class="modifier-small">Resolve: Não desista nunca. A emoção pode tomar conta de você e te fazer mais forte.</span></i></p>
+
+[1] Elusivo 1:
+
+[1] Elusivo 2:
+
+[1] Espírito Indomável:
+
+[1] Estrategista: se tiver mais ast q o adversario, hab e ac +1
+
+[1] Evasão 1: Es +1. Esquiva = 1d10.
+
+[1] Evasão 2: Es +1. Esquiva = 1d12.
+
+[1] Evocador 1: Concentração [Esculpir Magia].
+
+[1] Evocador 2:
+
+[1] Furioso 1: Pv +1 por ponto de Carisma. Concentração [Fúria].
+
+Furia: +Fe [0.5] de Dano. -Fe [1.0], +Con [0.5], Max = -1 de Esquiva.
+
+[1] Furioso 2:  frenesi, tolerancia de raiva bursta p fora
+
+[1] Gato de Beco:
+
+[1] Habilidoso: Hab +1, Postura +1.
+
+[1] Instinto de Tigre:
+
+[1] Invocador 1:
+
+[1] Invocador 2:
+
+[1] Oportunista: bonus atk imediato
+
+[1] Persistente: +res com hp abaixo de 50%
+
+[1] Preciso 1: acerto +1
+
+[1] Preciso 2: +1 dano ac profundo e +2 dano ac grave
+
+[1] Veloz 1:
+
+[1] Veloz 2:
+
+—————————————————————————————————————————————————————————————————————————————————————————————————
+
+VR = Value of Response
+VD = Value of Dodge
+
+IR = Initiative Roll
+HR = Hit Roll
+DR = Damage Roll
+
+existem os numeros fixos. a açao é feita e o IR e HR são dados. o char então escolhe uma reação e, dependendo da reaçao, ele vai modificar os VR e VD
+
+o VR modificado só pode buffar umas reaçoes suas, mas ele só é lido mesmo com o numero fixo vs a IR dos oponentes. dai se vc buffar ele em +2 por usar tal reaçao, talvez vc ganhe uma advantage com ele
+
+algumas reaçoes tipo block precisam de VD dependendo da sua VR. se sua VR ter tido tal advantage o block é automatico
+
+a relevancia é vc ver que o HR do adv é alto e decidir simplesmente bloquear.
+
+na real o VD vai ser usado sim, mas o valor que vc tirou anteriormente ainda vai ser relevante. se vc usar um block sem ter ganho ele automatico, vc vai buffar sua VR anterior pra ver se ultrapassa a IR (e não vai rodar VD)
+
+algumas reaçoes dependem da sua VR já ter vencido a IR ou HR do adversario
+
+    <h3 id="6.1">Models</h3>
+        <p> Como já mencionado anteriormente, toda arma possui um Model. Isso significa que ela é modelada á partir de um design "parente", do qual ela vai herdar todas as suas propriedades e então adicionar as suas características únicas. </p>
+        <p>Pense em um Martelo. Martelos tem todo o seu formato único e aqueles que usem de um martelo pra combate possuem um arsenal específico de técnicas, correto? Mas e se esse Martelo for um Martelo de Guerra? É aí que nós vamos ter de mexer na arma, e não no modelo. O martelo de guerra é um martelo, mas seu peso será único, ele terá algumas ações a mais que outros martelos não possuem e seus bônus / penalidades também serão únicos.</p>
+        <p> Lista de Models: </p>
+        <p> <span class="modifier-18px"><b>Sword</b></span></p>
+        <p> <i><span class="modifier-small">Type: Slashing, Piercing.</span></i></p>
+        <p> <i><span class="modifier-small">Actions: Cut, Pierce, Bash.</span></i></p>
+        <p> <i><span class="modifier-small">Benefits: .</span></i></p>
+        <p> <i><span class="modifier-small">Penalties: Bash tem 0m de Reach. Pierce tem -1d4 de Hit Chance em Very Close.</span></i></p>
+        <p> <span class="modifier-18px"><b>Axe</b></span></p>
+        <p> <i><span class="modifier-small">Type: Slashing.</span></i></p>
+        <p> <i><span class="modifier-small">Actions: Slash, Bash.</span></i></p>
+        <p> <i><span class="modifier-small">Benefits: .</span></i></p>
+        <p> <span class="modifier-18px"><b>Spear</b></span></p>
+        <p> <i><span class="modifier-small">Type: Pierce.</span></i></p>
+        <p> <i><span class="modifier-small">Actions: Bash, Slash, Pierce.</span></i></p>
+        <p> <i><span class="modifier-small">Benefits: .</span></i></p>
+        <p> <i><span class="modifier-small">Penalties: Pierce e Slash tem -1d8 de Speed em Very Close.</span></i></p>
+        <p> <span class="modifier-18px"><b>Hammer</b></span></p>
+        <p> <i><span class="modifier-small">Type: Concussion.</span></i></p>
+        <p> <i><span class="modifier-small">Actions: Bash.</span></i></p>
+        <p> <i><span class="modifier-small">Benefits: .</span></i></p>
+    <img src="css/imgs/Img10.jpg" id="img10">
+        <p> <span class="modifier-18px"><b>Shield</b></span></p>
+        <p> <i><span class="modifier-small">Type: Concussion, Protection.</span></i></p>
+        <p> <i><span class="modifier-small">Actions: Bash, Raise Shield.</span></i></p>
+        <p> <i><span class="modifier-small">Benefits: Blocks bem sucedidos podem redirecionar o ataque para essa Arma.</span></i></p>
+        <p> <span class="modifier-18px"><b>Throwing Knives</b></span></p>
+        <p> <i><span class="modifier-small">Type: Pierce.</span></i></p>
+        <p> <i><span class="modifier-small">Actions: (oq vai definir a speed e o fato de ser ranged é a açao de throw aqui).</span></i></p>
+        <p> <i><span class="modifier-small">Benefits: .</span></i></p>
+        <p> <i><span class="modifier-small">Penalties: .</span></i></p>
+        <p> <span class="modifier-18px"><b>Kusarigama</b></span></p>
+        <p> <i><span class="modifier-small">Type: Slashing, Concussion.</span></i></p>
+        <p> <i><span class="modifier-small">Actions: (correntes), (foice).</span></i></p>
+        <p> <i><span class="modifier-small">Benefits: .</span></i></p>
+        <p> <i><span class="modifier-small">Penalties: .</span></i></p>
+        <p> <span class="modifier-18px"><b>Shurikens</b></span></p>
+        <p> <i><span class="modifier-small">Type: Slashing, Piercing.</span></i></p>
+        <p> <i><span class="modifier-small">Actions: .</span></i></p>
+        <p> <i><span class="modifier-small">Benefits: .</span></i></p>
+        <p> <i><span class="modifier-small">Penalties: .</span></i></p>
+        <p> <span class="modifier-18px"><b>Bow</b></span></p>
+        <p> <i><span class="modifier-small">Type: Piercing.</span></i></p>
+        <p> <i><span class="modifier-small">Actions: .</span></i></p>
+        <p> <i><span class="modifier-small">Benefits: .</span></i></p>
+        <p> <i><span class="modifier-small">Penalties: .</span></i></p>
+        <p> <span class="modifier-18px"><b>Pistol</b></span></p>
+        <p> <i><span class="modifier-small">Type: Slashing.</span></i></p>
+        <p> <i><span class="modifier-small">Actions: Slash, Bash.</span></i></p>
+        <p> <i><span class="modifier-small">Benefits: .</span></i></p>
+        <p> <i><span class="modifier-small">Penalties: .</span></i></p>
+    <hr>
+
+runs = movimentos longos. gastam tds as maneuvers (com bonus p qnt mais gastou). ativa algo chamado movement phase; todos na arena podem decidir reagir á movimentação da pessoa, e quem tiver foco nas pessoas que quiserem reagir á movimentação da pessoa vão poder reagir á reação dela.
+
+esse é pra ser o mais raro. é pra aqueles que realmente querem correr DO CAMPO, pra fora do alcance de todos, ou que estão realmente muito longe de um personagem e precisam cruzar o campo inteiro pra chegar em alguém, por isso essa reação em escala global.
+
+pense no luffy cruzando marineford. todos ali estão ocupados com a guerra, ninguém vai virar pra parar um doido correndo feito louco até a plataforma... exceto o Mihawk, que estava por ali sem nenhum inimigo. ele então reagiu ao luffy e se botou na direção dele como obstáculo, até o momento que o buggy chegou pra atrapalhar ele. é pra ser difícil que personagens que estejam ocupados com outros possam reagir aos runs, já que a reação deles vai triggar a reação do outro (crie um bonus pra essa reaçao do outro poder foder a reaçao dele)
+
+Attention =
+
+em personagem (bonus p cima do personagem)
+
+em 2 personagens (debuff -1 p cima dos 2)
+
+em uma direçao (neutro p cima da direçao, debuff -3 nas outras direçoes)
+em duas direçoes (debuff -1 nas 2 direçoes, debuff -2 nas outras direçoes)
+em tds direçoes (debuff -2 tds direçoes)
+
+
+    <p> <span class="modifier-18px"><b>Breach:</b></span><span class="modifier-small"> (Brch) Brechas que existem na
+            Armadura. Elas vão estar presentes em certas partes da sua Armadura e vão possuir um valor de Lead que você
+            precisa alcançar para acertá-las.<br><br>
+            Acertar uma Breach vai invalidar a Armadura caso você o acerte com um ataque Piercing, e vai ignorar metade
+            da defesa da Armadura se você acertá-lo com um ataque Slashing.<br><br>
+            Breaches que forem criadas por vencer o valor de Armor vão ser acessíveis através de uma High Advantage em
+            Hit.<br><br>
+            Para cada 10+ de Damage que vencer a Armor, a Advantage necessária vai ser reduzida em 1 Nível.</span></p>
+    <p> <span class="modifier-18px"><b>Cover:</b></span><span class="modifier-small"> Quais partes do corpo a armadura
+            está cobrindo.</span></p>
+    <p> <span class="modifier-18px"><b>Armor:</b></span><span class="modifier-small"> Armor é um valor que transformará
+            qualquer Slashing / Piercing Damage em Concussion Damage.<br><br>
+            Se o Slashing / Piercing Damage ultrapassar a Armor, o quê restar não terá seu Type ignorado e criará uma
+            Breach. Exemplo; você causou 20 de Damage e o adversário tinha 17 de Armor. <br><br>Sobrou 3 de Damage,
+            então esses 3 de Damage vão ser considerados do seu Tipo original (Slashing ou Piercing, que antes estavam
+            sendo transformados em Concussion) e você vai abrir uma Breach na Armadura, que vamos ler sobre logo
+            abaixo.</span></p>
+
+            <p><span class="modifier-18px"><b>Counter-Tactics:</b></span><span class="modifier-small"> São obtidas
+                    através da "Analyse" Action. Toda Tactic possui uma Counter-Tactic e um valor para que ela seja
+                    descoberta, cujo você terá de obter na sua Analyse.</span></p>
+            <p>A maioria das Counter-Tactics são Tactics por conta própria, mas que possuem certos benefícios á mais
+                quando usadas contra uma Tactic que eles contrariam. Nem sempre elas vão ser a solução, porém, e talvez
+                sejam até prejudiciais para você.</p>
+            <p>Se uma Tactic que contrarie outra Tactic for usada sem obter a Analyse necessária, ela não concederá os
+                benefícios de Counter-Tactic.</p>
+            <p>O Jogador não é bloqueado de encontrar suas próprias soluções para acabar com a estratégia de alguém. Se
+                um oponente está querendo ficar escondido á todo custo, você pode ficar á vontade para explodir todas as
+                paredes ao redor. Essa não é uma ação que precisa de um grande cérebro pra fazer e não pode bem ser
+                considerada uma "estratégia", e não faz sentido limitar tanto assim os jogadores.</p>
+            <p>Tactics não chegam nem perto de serem imbatíveis e seus benefícios não são muito altos para que não se
+                tornem algo absolutamente necessário, mas estar preparado para enfrentar as maiores armas do seu
+                oponente ou jogar para cima de seus pontos fracos podem fazer a diferença.</p>
+            <p>Tricks também estão longe de serem imbatíveis, mas elas podem ser mais definitivas para o combate de uma
+                forma menos constante que as Tactics. Se você for abençoado com a sorte no momento certo, uma trapaça
+                pode encerrar a luta, mas não é sempre que é possível trapacear.</p>
+
+    <p> <span class="modifier-18px"><b>Two-Hand Wield</b></span></p>
+    <p> <i><span class="modifier-small">Benefits: Usa Two Hands. Damage, Hit Chance +1. Physical Strength +1 em e contra
+                Parries. +1 contra Disarm. 1 em Movement Actions e Dodge.</span></i></p>
+    <p> <span class="modifier-18px"><b>One-Hand Wield</b></span></p>
+    <p> <i><span class="modifier-small">Benefits: Usa One Hand. Dodge +1.</span></i></p>
+    <p> <span class="modifier-18px"><b>Dual Wield</b></span></p>
+
+.hp-number::after {
+position: fixed;
+content: '-100';
+transform: translate(0px, 0px);
+color: red;
+z-index: 300;
+font-size: 16px;
+font-weight: bold;
+}
+
+.mp-number::after {
+display: none;
+position: fixed;
+content: '-100';
+transform: translate(0px, 0px);
+color: rgb(47, 86, 216);
+z-index: 300;
+font-size: 16px;
+transition: 2s;
+font-weight: bold;
+}
+
+<p id="counter">100</p>
+<button onclick="reduceNumber()">Reduce to 70</button>
+
+    <p> Como já mencionado anteriormente, toda arma possui um Model. Isso significa que ela é modelada á partir de um
+        design "parente", do qual ela vai herdar todas as suas propriedades e então adicionar as suas características
+        únicas. </p>
+    <p>Pense em um Martelo. Martelos tem todo o seu formato único e aqueles que usem de um martelo pra combate possuem
+        um arsenal específico de técnicas, correto? Mas e se esse Martelo for um Martelo de Guerra? É aí que nós vamos
+        ter de mexer na arma, e não no modelo. O martelo de guerra é um martelo, mas seu peso será único, ele terá
+        algumas ações a mais que outros martelos não possuem e seus bônus / penalidades também serão únicos.</p>
+    <p> Lista de Models: </p>
+    <p><span class="modifier-18px center"><b>Close Combat</b></p>
+    <p> <span class="modifier-18px"><b>Sword</b></span></p>
+    <p> <i><span class="modifier-small">Type: Slashing, Piercing.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: Cut, Pierce, Bash.</span></i></p>
+    <p> <span class="modifier-18px"><b>Axe</b></span></p>
+    <p> <i><span class="modifier-small">Type: Slashing.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: Hack and Slash, Cut, Bash.</span></i></p>
+    <p> <span class="modifier-18px"><b>Spear</b></span></p>
+    <p> <i><span class="modifier-small">Type: Pierce.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: Bash, Cut, Pierce.</span></i></p>
+    <p> <span class="modifier-18px"><b>Hammer</b></span></p>
+    <p> <i><span class="modifier-small">Type: Concussion.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: Bash.</span></i></p>
+    <img src="css/imgs/Img10.jpg" id="img10">
+    <p> <span class="modifier-18px"><b>Shield</b></span></p>
+    <p> <i><span class="modifier-small">Type: Concussion, Protection.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: Bash, Raise Shield, Shield Block.</span></i></p>
+    <p> <span class="modifier-18px"><b>Chains</b></span></p>
+    <p> <i><span class="modifier-small">Type: Concussion.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: (agarrar).</span></i></p>
+    <p> <span class="modifier-18px"><b>Sickle</b></span></p>
+    <p> <i><span class="modifier-small">Type: Slashing, Concussion.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: (correntes), (foice).</span></i></p>
+    <p> <span class="modifier-18px"><b>Kusarigama</b></span></p>
+    <p> <i><span class="modifier-small">Type: Slashing, Concussion.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: (correntes), (foice).</span></i></p>
+    <p><span class="modifier-18px center"><b>Throwable</b></p>
+    <p> <span class="modifier-18px"><b>Shuriken</b></span></p>
+    <p> <i><span class="modifier-small">Type: Slashing.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: Throw.</span></i></p>
+    <p> <span class="modifier-18px"><b>Throwing Knive</b></span></p>
+    <p> <i><span class="modifier-small">Type: Piercing.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: Throw.</span></i></p>
+    <p><span class="modifier-18px center"><b>Shooting</b></p>
+    <p> <span class="modifier-18px"><b>Bow</b></span></p>
+    <p> <i><span class="modifier-small">Type: Piercing.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: Shoot.</span></i></p>
+    <p> <span class="modifier-18px"><b>Pistol</b></span></p>
+    <p> <i><span class="modifier-small">Type: Slashing.</span></i></p>
+    <p> <i><span class="modifier-small">Actions: Shoot.</span></i></p>
+    <hr>
+
+#announce-letters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    top: 360px;
+    left: 620px;
+    color: white;
+    font-size: 18px;
+    z-index: 800;
+    pointer-events: none;
+    transition-duration: 1.2s;
+    opacity: 0;
+}
+
+#announce-letters2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    top: 120px;
+    left: 620px;
+    color: black;
+    font-size: 18px;
+    z-index: 800;
+    pointer-events: none;
+    transition-duration: 1.2s;
+    opacity: 0;
+}
+
+/*.skill-bar {
+position: absolute;
+display: none;
+margin-top: 0px;
+margin-right: 2%;
+margin-left: 61%;
+bottom: 15px;
+width: 30%;
+height: 550px;
+background-color: whitesmoke;
+border: 8px groove rgb(143, 167, 163);
+z-index: 55;
+} */
+
+.dice {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transform: rotateX(45deg) rotateY(45deg);
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 5px solid #f6f3f0;
+    transform-style: preserve-3d;
+    background: linear-gradient(145deg, #dddbd8, #fff);
+}
+
+// Canvas
+
+const canvas = document.getElementById('map-game')
+const ctx = canvas.getContext('2d') // Gives access to Canvas API
+
+const tileW = 85;
+const tileH = 63;
+
+const gridRows = 14;
+const gridCols = 16;
+
+const map = [
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+]
+
+const tileImage = new Image()
+tileImage.src = "./css/imgs/floor.png"
+
+tileImage.onload = () => {
+  window.requestAnimationFrame(updateAll);
+};
+
+const updateAll = () => {
+    drawMap()
+    window.requestAnimationFrame(updateAll)
+}
+
+window.onload = () => {
+    window.requestAnimationFrame(updateAll)
+}
+
+const drawMap = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas before redrawing
+    for(let eachRow = 0; eachRow < gridRows; eachRow++){
+        for(let eachCol = 0; eachCol < gridCols; eachCol++) {
+            let arrayIndex = eachRow * gridRows + eachCol;
+
+    if(map[arrayIndex] === 1) {
+        ctx.drawImage(tileImage, tileW * eachCol, tileH * eachRow, tileW, tileH);
+} else {
+        ctx.fillStyle = "black"
+        ctx.fillRect(tileW*eachCol,tileH * eachRow,tileW,tileH)
+}
+
+}
+}
+}
+
+
+
+
+            <div id="players-container">
+                <div class="avatar-container">
+                    <div class="border col" id="player-avatar"></div>
+                    <div class="border col" id="player-avatar"></div>
+                    <div class="border col" id="player-avatar"></div>
+                </div>
+                <div class="bar-container">
+                    <div class="col" id="player-bar"></div>
+                    <div class="col" id="player-bar"></div>
+                    <div class="col" id="player-bar"></div>
+                </div>
+                <div class="avatar-container">
+                    <div class="border col" id="player-avatar"></div>
+                    <div class="border col" id="player-avatar"></div>
+                    <div class="border col" id="player-avatar"></div>
+                </div>
+                <div class="bar-container">
+                    <div class="col" id="player-bar"></div>
+                    <div class="col" id="player-bar"></div>
+                    <div class="col" id="player-bar"></div>
+                </div>
+
+
+
+
+
+        <div class="container-fluid custom-modal">
+            <div id="modal-positioning">
+                <div id="borderplayer1"></div>
+                <div id="imgplayer1"></div>
+                <div id="borderplayer2"></div>
+                <div id="imgplayer2"></div>
+            </div>
+            <div class="row container" id="names-positioning">
+                <div class="bg-namep1">
+                    <div id="namep1">Gojo Kazuki</div>
+                </div>
+                <div class="bg-namep2">
+                    <div id="namep2">Yukimura Kenzo</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid custom-modal">
+            <div class="row">
+            <div class="col-6 p1-container">
+                    <div class="col-12 img-p1-container">
+                        <div class="border-p1">
+                        <div class="img-p1"></div></div>
+                    </div>
+            </div>
+            <div class="col-6 p2-container"></div>
+                    <div class="col-12 img-p2"></div>
+            </div>
+        </div>
+
+/*
+.custom-modal {
+    position: fixed;
+    /* Fixed positioning relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    /* Higher than the overlay */
+    /* Additional styling for your images or modal content */
+    /* Optional: a background for the modal */
+    background: rgb(0,0,0,0.0);
+
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
+*/
+
+
+
+                            RESPONSE
+
+pBarinnerHTML = `
+  <div class="img-personagem"></div>
+  <div class="modifiers-container">
+    <div class="modifiers" style="color: red">HP: 100 / 100</div>
+    <div class="modifiers" style="color: blue">MP: 100 / 100</div>
+    <div class="modifiers" style="color: green">SP: 100 / 100</div>
+    <div class="modifiers" style="color: orange">AP: 5 / 5</div>
+    <div class="modifiers-small" id="ps">PS: </div>
+    <div class="modifiers-small" id="ss">SS: </div>
+    <div class="modifiers-small" id="end">EN: </div>
+    <div class="modifiers-small" id="tec">Tec:</div>
+    <div class="modifiers-small" id="spd">Spd:</div>
+    <div class="modifiers-small" id="rfx">Rfx:</div>
+    <div class="modifiers-small"></div>
+    <div class="modifiers-small"></div>
+  </div>
+`

@@ -1,0 +1,442 @@
+.chat-box {
+    flex-grow: 1; /* Let the chat-box grow to fill the chat container */
+    overflow-y: scroll; /* Enable vertical scrolling when needed */
+    scrollbar-width: thin;
+    padding: 10px;
+    background-color: black; /* Optional background color */
+    box-sizing: border-box; /* Ensure padding is inside the width/height */
+}
+
+.write-box {
+    background-color: black;
+    color: white;
+    width: 76vw;
+    height: 10vh;
+    top: 1080px;
+    left: 30px;
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#linha-horizontal-3 {
+background-color: #1a1a1a;
+width: 99%;
+height: 10px;
+top: 1246px;
+position: absolute;
+margin: 0;
+}
+
+.message {
+margin: 5px 0;
+padding: 10px;
+color: white;
+}
+
+
+.players-column {
+background-color: black;
+color: white;
+margin-left: 1395px;
+width: 320px;
+height: 700px;
+top: 645px;
+right: 20px;
+display: flex;
+flex-direction: column;
+position: absolute;
+
+font-size: 14px;
+}
+
+#player1 {
+background-color: black;
+background-size: cover;
+background-repeat: no-repeat;
+background-image: url(imgs/banner11.jpg);
+width: 7vw;
+height: 19vh;
+right: 40px;
+position: relative;
+}
+
+#player1::marker {
+left: 10px;
+color: black;
+}
+
+#player2 {
+background-color: black;
+background-size: cover;
+background-repeat: no-repeat;
+background-image: url(imgs/banner12.jpg);
+width: 7vw;
+height: 19vh;
+right: 40px;
+position: relative;
+}
+
+#player2::marker {
+left: 10px;
+color: black;
+}
+
+.flex-container {
+display: flex;
+flex-shrink: 0;
+align-items: right;
+}
+
+.bottom-container {
+display: flex;
+flex-direction: column; /* Stack the name, health, and mana bars */
+right: -45px;
+margin-left: -36px
+}
+
+.play2abaixo {
+margin-top: 8px;
+}
+
+#logo {
+background-image: url(imgs/MeuPersonagem.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: left;
+width: 40vw;
+height: 16vh;
+margin-right: 50px;
+overflow: hidden;
+text-align: center;
+line-height: 180px;
+font-size: 4em;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+border-style: groove;
+border-radius: 20px;
+}
+
+#map-container {
+width: 1080px;
+height: 780px;
+background-image: url(imgs/woodenfloor2.jpg);
+background-repeat: repeat;
+border-image: url(imgs/verticalplank.jpg) 20% round;
+border-right: 40px solid;
+
+color: white;
+
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+#chat-container {
+width: 480px;
+height: 780px;
+
+background-color: rgb(24, 5, 5);
+
+border-image: url(imgs/verticalplank.jpg) 20% round;
+border-right: 40px solid;
+
+color: white;
+
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+#players-container {
+width: 320px;
+height: 780px;
+background-image: url(imgs/woodenfloor2.jpg);
+background-repeat: repeat;
+}
+
+color: white;
+
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+
+                <div class="message">
+                    <div class="avatar"></div>
+                    <div class="text">OOisnvasnvasnvasnvasnvasnvasnvasnvasnvasnvasnvasnvasnvasnvas</div>
+                </div>
+                <div class="message">
+                    <div class="avatar"></div>
+                    <div class="text">Oi</div>
+                </div>
+
+border-image: url(imgs/firebg3.jpg) 3- round;
+
+/* Top left and top right cutouts */
+#map-container::before {
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 65px;
+    background-image: url(imgs/Yuji444444.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+#map-container::after {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 95px;
+    background-image: url(imgs/Gojo77655.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    border-radius: 50%;
+}
+
+#map-container::before {
+    top: -45px;
+    left: -20px;
+}
+
+#map-container::after {
+    top: -38px;
+    right: -48px;
+}
+
+            <div id="chat-container">
+                <div class="chat-box">
+                    <div class="message-box">
+                        <div class="avatar"></div>
+                        <div class="message">Kazuki Gojo diz:<br><br><br>Oi</div>
+                    </div>
+                    <div class="message-box">
+                        <div class="avatar"></div>
+                        <div class="message">Ryuji diz:<br><br>Texto</div>
+                    </div>
+                </div>
+            </div>
+
+#chat-container {
+    width: 1440px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    /* Keep items stacked vertically */
+
+    background-color: black;
+
+}
+
+.chat-box {
+    border: 1px solid grey;
+    overflow-y: scroll;
+    /* Enable vertical scrolling when needed */
+    height: 340px;
+}
+
+/* É importante ter a classe pra poder deixar message e avatar sendo siblings. Eu nem precisaria colocar ela aqui no css, mas quis por pra poder marcar com uma anotação */
+/* Dá pra fazer com flex e eu consegui criar, mas o texto não caia para debaixo do avatar. Ficou bom, os dois elementos estavam lado a lado e respeitando os widths, mas ele não caia pra baixo do avatar */
+.message-box {
+    color: white;
+}
+
+.message {
+    margin-bottom: 10px;
+    /* Add spacing between messages */
+    padding: 10px;
+    background-color: #1a1a1a;
+    /* Optional: Background for each message */
+    width: 900px;
+    min-height: 60px;
+    height: auto;
+    word-break: break-word;
+}
+
+/* Avatar image (left of the message) */
+.avatar {
+    float: left;
+    border: 2px solid silver;
+    background-image: url(imgs/Gojo3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    /* Adjust size */
+    height: 40px;
+    margin-left: 8px;
+    margin-right: 8px;
+    /* Add spacing between image and text */
+}
+
+border-bottom: 1px;
+border-style: solid;
+border-color: rgb(36, 43, 43);
+
+                <div class="vertical-container">
+                <div id="browser-container">
+                <div class="browser"></div>
+                <div class="browser"></div>
+                <div class="browser"></div>
+                <div class="browser"></div>
+                <div class="browser"></div>
+                <div class="browser"></div>
+                </div>
+                </div>
+
+            <div class="horizontal-container">
+                <div id="skills-container">
+                    <div class="skill-avatar1">
+                    </div>
+                    <div class="skill-avatar2" title="Limitless: Red">
+                    </div>
+                </div>
+            </div>
+
+
+#skills-container {
+    width: 1300px;
+    height: 240px;
+    background-color: black;
+    border: 3px groove silver;
+    position: relative;
+    margin-top: 20px;
+    margin-right: 25px;
+    margin-bottom: 30px;
+}
+
+#browser-container {
+margin-right: 25px;
+margin-left: -10px;
+}
+
+.browser {
+width: 100px;
+height: 20px;
+background-color: white;
+margin-top: 22px;
+}
+
+.skill-avatar1 {
+float: left;
+width: 100px;
+height: 33.3333%;
+background-image: url(imgs/GojoBlue1.jpeg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.skill-avatar2 {
+float: left;
+width: 100px;
+height: 33.3333%;
+background-image: url(imgs/Red1.png);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+#divisoria3 {
+    background: linear-gradient(to bottom, white, whitesmoke);
+    width: 100%;
+    height: 0px;
+    clear: both;
+}
+
+#divisoria3 {
+    background: linear-gradient(to bottom, white, whitesmoke);
+    width: 100%;
+    height: 0px;
+    clear: both;
+}
+
+/*.cabecalho {
+display: flex;
+width: 100%;
+height: 160px;
+}
+
+#header-1 {
+background-image: url(./imgs/WPGojo.jpg);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+width: 50%;
+height: 100%;
+}
+
+#header-2 {
+background-image: url('./imgs/WPSuku.jpg');
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+width: 50%;
+height: 100%;
+} */
+
+/*playerBar.forEach(players => {
+
+console.log(players)
+
+players.addEventListener('mouseenter', () => {
+
+players.style.background = "red"
+
+})
+
+players.addEventListener('mouseout', () => {
+
+players.style.background = "whitesmoke"
+
+})
+
+}) */
+
+function actionMoment() {
+
+actingBtn.addEventListener('click', () => {
+
+return new Promise((resolve) => {
+
+if(waitForReaction){
+resolve()
+console.log("Oi")
+}
+
+})
+
+})
+
+}
+
+                        <div id="shove" class="skill-placement attack hidden">
+                            <div class="overlay-text">Shove<br><br>Damage:?</div>
+                        </div>
+
+                <div class="vertical-container attacker-action">
+                    <div class="chosen-action"></div>
+                </div>
+                <div class="vertical-container defensor-reaction">
+                    <div class="chosen-reaction"></div>
+                </div>
+
+.def-effects {
+color: white;
+margin-top: 3%;
+font-size: 15px;
+width: 200px;
+height: 100px;
+border: 1px dotted white;
+font-family: 'Tanjiro';
+text-indent: 10px;
+line-height: 50px;
+transform: translateX(-50%);
+margin-left: 20px;
+}
